@@ -87,7 +87,7 @@ function createBirthdayCard(bday, isToday) {
         : '';
 
     return `
-        <div class="birthday-card ${isToday ? 'today' : ''}" onclick="viewBirthday(${bday.id})">
+        <div class="birthday-card ${isToday ? 'today' : ''}" onclick="viewBirthday('${bday.id}')">
             ${imageHtml}
             <div class="birthday-name">${bday.name}</div>
             ${relationshipHtml}

@@ -12,9 +12,13 @@ ENV/
 .installed.cfg
 *.egg
 
-# Data files (user data should not be in git)
+# Data files (old - now using Firestore)
 data/
-*.json
+
+# Firebase / Google Cloud credentials
+serviceAccountKey.json
+firebase-credentials.json
+*-firebase-adminsdk-*.json
 
 # Environment variables
 .env
