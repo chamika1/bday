@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Birthday Reminder - Welcome</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body class="landing-page">
     <div class="animated-background">
         <div class="bubble"></div>
@@ -37,7 +42,7 @@
                     <button type="submit" class="btn btn-primary">
                         <span>Sign In</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </button>
                 </form>
@@ -52,7 +57,7 @@
                     <button type="submit" class="btn btn-primary">
                         <span>Create Account</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </button>
                 </form>
@@ -83,4 +88,5 @@
 
     <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
 </body>
+
 </html>
