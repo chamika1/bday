@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this-in-production'
 
 # ImgBB API Configuration
-IMGBB_API_KEY = '61e3d87e49e4158a72f7254e5159b4d0'
+IMGBB_API_KEY = 'apikey'
 IMGBB_UPLOAD_URL = 'https://api.imgbb.com/1/upload'
 
 # Data files
