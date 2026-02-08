@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Birthday Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="dashboard-page">
+    <div class="animated-background">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="cake-icon">🎂</span>
+                <span class="brand-text">Birthday Reminder</span>
+            </div>
+            <div class="nav-actions">
+                <span class="welcome-text">Welcome, <strong>{{ username }}</strong></span>
+                <button class="btn btn-secondary" id="signout-btn">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Add Birthday Button -->
+        <div class="add-birthday-section">
+            <button class="btn btn-add" id="add-birthday-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v8M8 12h8" />
+                </svg>
+                <span>Add Birthday</span>
+            </button>
+        </div>
+
+        <!-- Today's Birthdays Section -->
+        <section class="today-section">
+            <h2 class="section-title">🎉 Today's Birthdays</h2>
+            <div id="today-birthdays" class="birthdays-grid">
+                <!-- Today's birthdays will be loaded here -->
+            </div>
+            <div id="no-today-birthdays" class="empty-state" style="display: none;">
+                <div class="empty-icon">🎈</div>
+                <p>No birthdays today</p>
+            </div>
+        </section>
+
+        <!-- Upcoming Birthdays Section -->
+        <section class="upcoming-section">
+            <h2 class="section-title">📅 Upcoming Birthdays</h2>
+            <div id="upcoming-birthdays" class="birthdays-grid">
+                <!-- Upcoming birthdays will be loaded here -->
+            </div>
+            <div id="no-birthdays" class="empty-state" style="display: none;">
+                <div class="empty-icon">🎂</div>
+                <p>No birthdays added yet</p>
+                <small>Click the "Add Birthday" button to get started!</small>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add/Edit Birthday Modal -->
+    <div id="birthday-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <div class="modal-header">
+                <h2 id="modal-title">Add Birthday</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <form id="birthday-form">
+                <input type="hidden" id="birthday-id">
+
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" placeholder="Enter name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="relationship">Relationship</label>
+                    <input type="text" id="relationship" placeholder="e.g., Friend, Family, Colleague">
+                </div>
+
+                <div class="form-group">
+                    <label for="bdate">Birth Date *</label>
+                    <input type="date" id="bdate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Photo</label>
+                    <div class="image-upload">
+                        <input type="file" id="image" accept="image/*" style="display: none;">
+                        <button type="button" class="btn btn-secondary" id="upload-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <span>Choose Photo</span>
+                        </button>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="memo">Memo</label>
+                    <textarea id="memo" placeholder="Add a special note or memory..." rows="3"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Save Birthday</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Birthday Modal -->
+    <div id="view-modal" class="modal">
+        <div class="modal-content glass-effect">
+            <div class="modal-header">
+                <h2>Birthday Details</h2>
+                <button class="close-btn" id="close-view-modal">&times;</button>
+            </div>
+            <div id="birthday-details" class="birthday-details">
+                <!-- Details will be loaded here -->
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" id="edit-birthday-btn">Edit</button>
+                <button type="button" class="btn btn-danger" id="delete-birthday-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+
+</html>

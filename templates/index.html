@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Reminder - Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="landing-page">
+    <div class="animated-background">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="container">
+        <div class="auth-card glass-effect">
+            <div class="logo-section">
+                <div class="cake-icon">🎂</div>
+                <h1 class="app-title">Birthday Reminder</h1>
+                <p class="app-subtitle">Never miss a special day again</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="signin">Sign In</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+
+            <div class="tab-content active" id="signin-tab">
+                <form id="signin-form">
+                    <div class="form-group">
+                        <label for="signin-username">Username</label>
+                        <input type="text" id="signin-username" placeholder="Enter your username" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Sign In</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="signup-tab">
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-username">Choose a Username</label>
+                        <input type="text" id="signup-username" placeholder="Enter a unique username" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Create Account</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="error-message" id="error-message"></div>
+            <div class="success-message" id="success-message"></div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">📅</div>
+                <h3>Track Birthdays</h3>
+                <p>Keep all important birthdays in one place</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">🔔</div>
+                <h3>Get Reminders</h3>
+                <p>See upcoming and today's birthdays</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <div class="feature-icon">📝</div>
+                <h3>Add Memories</h3>
+                <p>Store photos and special notes</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>
